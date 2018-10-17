@@ -53,9 +53,9 @@ public class PhotoButton : MonoBehaviour {
         //string path = Application.persistentDataPath + "Screenshots" + Screen.width + "X" + Screen.height + "" + ".png";
         string path = Application.persistentDataPath + "/Input.png";
 
-        Texture2D screenImage = new Texture2D(Screen.width, Screen.height*2/3);
+        Texture2D screenImage = new Texture2D(Screen.width, Screen.height*4/5);
         //Get Image from screen
-        screenImage.ReadPixels(new Rect(0, Screen.height/3, Screen.width, Screen.height), 0, 0);
+        screenImage.ReadPixels(new Rect(0, Screen.height/5, Screen.width, Screen.height), 0, 0);
         screenImage.Apply();
         //Convert to png
         byte[] imageBytes = screenImage.EncodeToPNG();
