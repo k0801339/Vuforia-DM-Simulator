@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio for Mac
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vuforia-DM-Simulator", "Assembly-CSharp.csproj", "{8AA81889-31C3-3CE2-B833-716778A9BF4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vuforia-DM-Simulator", "Assembly-CSharp-Editor.csproj", "{6104B327-CA5D-B491-5A9B-82BF2F6FC159}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AA81889-31C3-3CE2-B833-716778A9BF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA81889-31C3-3CE2-B833-716778A9BF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA81889-31C3-3CE2-B833-716778A9BF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA81889-31C3-3CE2-B833-716778A9BF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6104B327-CA5D-B491-5A9B-82BF2F6FC159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6104B327-CA5D-B491-5A9B-82BF2F6FC159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6104B327-CA5D-B491-5A9B-82BF2F6FC159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6104B327-CA5D-B491-5A9B-82BF2F6FC159}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
