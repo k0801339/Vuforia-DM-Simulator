@@ -9,21 +9,21 @@ public class PhotoButton : MonoBehaviour {
     public GameObject shopButton;
     public Image skeletonimg;
     private UnityEngine.UI.Image url_img;
-    private TextMeshProUGUI url_txt;
+    //private TextMeshProUGUI url_txt;
     private WebClick web;
     public GameObject Cube;
-    private TextMeshProUGUI txt;
+    //private TextMeshProUGUI txt;
     private Image img;
     private Text txt_ans;
     void Start()
     {
-        txt = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        //txt = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         img = gameObject.GetComponent<Image>();
         txt_ans = gameObject.GetComponentInChildren<Text>();
         txt_ans.enabled = false;
         url_img = shopButton.GetComponent<UnityEngine.UI.Image>();
         //img.enabled = false;
-        url_txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
+        //url_txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
         web = shopButton.GetComponent<WebClick>();
         skeletonimg.enabled = false;
         //skeletonimg.sprite = Resources.Load("chair/" + "0001", typeof(Sprite)) as Sprite;
@@ -42,7 +42,7 @@ public class PhotoButton : MonoBehaviour {
         Debug.Log("Click photo button");
         //Cube = OBJLoader.LoadOBJFile(Application.persistentDataPath + "Input.obj");
         //var andyObject = Instantiate(AndyAndroidPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
-        txt.enabled = false;
+        //txt.enabled = false;
         img.enabled = false;
     }
 
@@ -66,7 +66,7 @@ public class PhotoButton : MonoBehaviour {
         FtpUploader uploader = new FtpUploader();
         uploader.UploadFile(imageBytes);
         
-        txt.enabled = true;
+        //txt.enabled = true;
         img.enabled = true;
 
         yield return new WaitForSeconds(15);
@@ -75,7 +75,7 @@ public class PhotoButton : MonoBehaviour {
         //url_img = shopButton.GetComponent<UnityEngine.UI.Image>();
         img.enabled = true;
         //url_txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
-        txt.enabled = true;
+        //txt.enabled = true;
         skeletonimg.enabled = true;
         skeletonimg.sprite = Resources.Load("chair/"+idx, typeof(Sprite)) as Sprite;
         Debug.Log("Show match"+idx);

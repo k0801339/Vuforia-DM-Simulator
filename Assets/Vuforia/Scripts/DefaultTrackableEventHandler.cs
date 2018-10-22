@@ -60,7 +60,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         UnityEngine.UI.Image img = shopButton.GetComponent<UnityEngine.UI.Image>();
         img.enabled = false;
         TextMeshProUGUI txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
-        txt.enabled = false;
+        //txt.enabled = false;
 
         img = previewUI.GetComponent<UnityEngine.UI.Image>();
         img.enabled = false;
@@ -119,8 +119,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
                 UnityEngine.UI.Image img = shopButton.GetComponent<UnityEngine.UI.Image>();
                 img.enabled = true;
-                TextMeshProUGUI txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
-                txt.enabled = true;
+                TextMeshProUGUI txt;
+                //txt.enabled = true;
                 
                 web.getObj = true;
                 web.objname = mTrackableBehaviour.TrackableName;
@@ -215,8 +215,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
                 UnityEngine.UI.Image img = shopButton.GetComponent<UnityEngine.UI.Image>();
                 img.enabled = false;
-                TextMeshProUGUI txt = shopButton.GetComponentInChildren<TextMeshProUGUI>();
-                txt.enabled = false;
+                TextMeshProUGUI txt;
+               // txt.enabled = false;
 
                 web.getObj = false;
                 web.objname = mTrackableBehaviour.TrackableName;

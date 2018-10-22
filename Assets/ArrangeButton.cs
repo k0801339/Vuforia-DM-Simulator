@@ -7,12 +7,12 @@ using TMPro;
 public class ArrangeButton : MonoBehaviour {
 	public GameState gamestate;
 	private Image img;
-    private TextMeshProUGUI txt;
+    //private TextMeshProUGUI txt;
 	// Use this for initialization
 	void Start () {
-		txt = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+		//txt = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         img = gameObject.GetComponent<Image>();
-		txt.enabled = false;
+		//txt.enabled = false;
 		img.enabled = false;
 
 	}
@@ -21,12 +21,12 @@ public class ArrangeButton : MonoBehaviour {
 	void Update () {
 		if(gamestate.state == 1)
 		{
-			txt.enabled = true;
+			//txt.enabled = true;
 			img.enabled = true;
 		}
 		else if(gamestate.state == 0)
 		{
-			txt.enabled = false;
+			//txt.enabled = false;
 			img.enabled = false;
 		}
 	}
