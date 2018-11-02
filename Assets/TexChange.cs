@@ -58,6 +58,7 @@ public class TexChange : MonoBehaviour {
 	{
 		if(getObj)
 		{
+			Debug.Log("Change Texture");
 			switch(objname)
 			{
 				case "ekenas":

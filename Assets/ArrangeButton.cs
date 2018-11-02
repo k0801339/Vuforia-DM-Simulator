@@ -7,6 +7,7 @@ using TMPro;
 public class ArrangeButton : MonoBehaviour {
 	public GameState gamestate;
 	private Image img;
+	
     //private TextMeshProUGUI txt;
 	// Use this for initialization
 	void Start () {
@@ -35,7 +36,7 @@ public class ArrangeButton : MonoBehaviour {
 	{
 		if(gamestate.state == 1)
 		{
-			Debug.Log("Turn to arrangement state");
+			Debug.Log("Ready to turn to arrangement state...");
 			gamestate.state = 2;
 			switch(gamestate.objname){
 				case "ekenas":
@@ -78,7 +79,7 @@ public class ArrangeButton : MonoBehaviour {
 					break;
 			}
 		}
-		else if(gamestate.state == 2 && gamestate.detectedplane)
+		else if(gamestate.state == 3 && gamestate.detectedplane)
 		{
 			gamestate.readyToPut = true;
 			GameObject planeobj;
@@ -145,6 +146,7 @@ public class ArrangeButton : MonoBehaviour {
 		}
 		else if(gamestate.state == 2 && !gamestate.detectedplane)
 		{
+			Debug.Log("Back to display");
 			gamestate.state = 1;
 			switch(gamestate.objname){
 				case "ekenas":

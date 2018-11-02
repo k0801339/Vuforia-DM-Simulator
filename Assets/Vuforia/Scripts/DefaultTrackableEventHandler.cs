@@ -111,7 +111,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             //shopButton.SetActive(true);
 
             // Haven't tracked the photo/object
-            if(gamestate != null && gamestate.state == 0)
+            if(gamestate != null && gamestate.state == 0 && (mTrackableBehaviour.TrackableName == "ekenas" || 
+                mTrackableBehaviour.TrackableName == "borje"))
             {
                 // important! Must set right state & objname
                 gamestate.state = 1;
@@ -156,8 +157,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
                 // put the correspoding obj on the plane
                 Debug.Log("Detect the plane -> wait to click button");
                 GameObject arrangeButton = GameObject.Find("Arrangement");
-                ArrangeButton bb = arrangeButton.GetComponent<ArrangeButton>();
-                bb.Click();
+                gamestate.state = 3;
+
+                // ArrangeButton bb = arrangeButton.GetComponent<ArrangeButton>();
+                // bb.Click();
                 
             }
             else if(gamestate != null && gamestate.state == 1)
@@ -166,10 +169,14 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
                 Debug.Log("state 1");
                 
             }
+            else if(gamestate != null && gamestate.state == 3)
+            {
+                Debug.Log("Press arrange button now");
+            }
             else // TODO: create at here
             {
-                
-                OnTrackingFound();
+                Debug.Log("Maybe found plane. Do nothing.");
+                //OnTrackingFound();
             }
             /*
             UnityEngine.UI.Image img = shopButton.GetComponent<UnityEngine.UI.Image>();

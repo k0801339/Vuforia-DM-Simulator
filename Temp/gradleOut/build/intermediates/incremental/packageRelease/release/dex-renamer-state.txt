@@ -1,4 +1,0 @@
-#Sun Oct 28 17:01:46 CST 2018
-base.0=D\:\\unity\\Test Proj1\\Temp\\gradleOut\\build\\intermediates\\transforms\\dex\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex

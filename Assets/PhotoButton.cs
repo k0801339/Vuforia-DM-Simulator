@@ -45,6 +45,19 @@ public class PhotoButton : MonoBehaviour {
         //txt.enabled = false;
         img.enabled = false;
     }
+    private Texture2D ScaleTexture(Texture2D source,int targetWidth,int targetHeight) {
+        Texture2D result=new Texture2D(targetWidth,targetHeight,source.format,true);
+        Color[] rpixels=result.GetPixels(0);
+        float incX=((float)1/source.width)*((float)source.width/targetWidth);
+        float incY=((float)1/source.height)*((float)source.height/targetHeight);
+        for(int px=0; px<rpixels.Length; px++) {
+                rpixels[px] = source.GetPixelBilinear(incX*((float)px%targetWidth),
+                                  incY*((float)Mathf.Floor(px/targetWidth)));
+        }
+        result.SetPixels(rpixels,0);
+        result.Apply();
+        return result;
+    }
 
     IEnumerator captureScreenshot()
     {
@@ -57,8 +70,15 @@ public class PhotoButton : MonoBehaviour {
         //Get Image from screen
         screenImage.ReadPixels(new Rect(0, Screen.height/5, Screen.width, Screen.height), 0, 0);
         screenImage.Apply();
+
+        //resize
+        Texture2D newScreenshot = ScaleTexture(screenImage, screenImage.width/4, screenImage.height/4);
+        //newScreenshot.SetPixels(screenImage.GetPixels(1));
+        //newScreenshot.Apply();
+
         //Convert to png
-        byte[] imageBytes = screenImage.EncodeToPNG();
+        //byte[] imageBytes = screenImage.EncodeToPNG();
+        byte[] imageBytes = newScreenshot.EncodeToPNG();        
 
         //Save image to file
         System.IO.File.WriteAllBytes(path, imageBytes);
@@ -82,6 +102,7 @@ public class PhotoButton : MonoBehaviour {
         
     }
 }
+
 
 
 
